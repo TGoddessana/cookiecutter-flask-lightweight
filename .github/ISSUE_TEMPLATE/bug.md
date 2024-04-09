@@ -1,6 +1,10 @@
 ---
 name: Bug report
+about: report bugs you find
+title: ''
 labels: bug
+assignees: ''
+
 ---
 
 ## What bug did you find?
