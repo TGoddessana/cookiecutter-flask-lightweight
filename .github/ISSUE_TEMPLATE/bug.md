@@ -1,10 +1,9 @@
 ---
 name: Bug report
-about: report bugs you find
-title: ''
+about: Report bugs you find
+title: ""
 labels: bug
-assignees: ''
-
+assignees: ""
 ---
 
 ## What bug did you find?
