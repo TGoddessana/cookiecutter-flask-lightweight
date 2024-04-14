@@ -2,7 +2,7 @@
 # from this:
 # https://github.com/cookiecutter/cookiecutter-django/blob/master/.pre-commit-config.yaml
 
-exclude: "{{cookiecutter.project_slug}}"
+exclude: '{{cookiecutter.project_slug}}'
 default_stages: [commit]
 
 default_language_version:
@@ -24,10 +24,11 @@ repos:
       - id: detect-private-key
 
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: "v4.0.0-alpha.8"
+    rev: 'v4.0.0-alpha.8'
     hooks:
       - id: prettier
-        args: ["--tab-width", "2"]
+        args: ['--tab-width', '2', '--single-quote']
+        exclude: 'cookiecutter_app/templates/' #TODO: {{cookiecutter.project_slug}}/templates/
 
   - repo: https://github.com/asottile/pyupgrade
     rev: v3.15.2
