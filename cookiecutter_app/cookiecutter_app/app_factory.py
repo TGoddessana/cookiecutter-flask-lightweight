@@ -23,7 +23,12 @@ def _register_extensions(app):
     cors.init_app(app)
     debug_toolbar.init_app(app)
     db.init_app(app)
+    _import_models()
     migrate.init_app(app, db)
+
+
+def _import_models():
+    from .users import models
 
 
 def _register_blueprints(app):
