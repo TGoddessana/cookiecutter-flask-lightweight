@@ -2,7 +2,7 @@
 # from this:
 # https://github.com/cookiecutter/cookiecutter-django/blob/master/.pre-commit-config.yaml
 
-exclude: '{{cookiecutter.project_slug}}'
+exclude: 'cookiecutter_app' # TODO: {{cookiecutter.project_slug}}
 default_stages: [commit]
 
 default_language_version:
