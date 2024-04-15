@@ -13,20 +13,22 @@ this is a lightweight template! 😎'
 
 ## Features
 
-- [ ] For Flask 3.0+
-- [ ] Works with Python 3.12+
+- [x] For Flask 3.0+
+- [x] Works with Python 3.12+
 - [ ] Basic Flask app structure
-- [ ] 12-factor app ready using `python-dotenv`
-- [ ] `SQLAlchemy` for ORM
-- [ ] `Flask-Migrate` for database migrations
-- [ ] Basic User model
-- [ ] Basic `WebSockets` support
-- [ ] `Docker` for development and production
-- [ ] `pre-commit` for code quality
+- [x] 12-factor app ready using [`environs`](https://github.com/sloria/environs)
+- [x] CORS Header support using [`flask-cors`](https://github.com/corydolphin/flask-cors)
+- [ ] ORM setup using [`flask-sqlalchemy`](https://github.com/pallets-eco/flask-sqlalchemy)
+- [ ] Database migration using [`flask-migrate`](https://github.com/miguelgrinberg/Flask-Migrate)
+- [x] Debug toolbar setup using [`flask-debugtoolbar`](https://github.com/pallets-eco/flask-debugtoolbar)
+- [ ] API Development using [`flask-smorest`](https://github.com/marshmallow-code/flask-smorest)
+- [ ] Containerized using `Docker`
+- [ ] Code quality using `pre-commit`
 
 ## Constraints
+
 - Only maintained extensions are used
 
 ## Usage
 
-# TODO
+- TODO
