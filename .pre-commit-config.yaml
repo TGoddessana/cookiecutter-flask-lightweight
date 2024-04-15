@@ -28,7 +28,6 @@ repos:
     hooks:
       - id: prettier
         args: ['--tab-width', '2', '--single-quote']
-        exclude: 'cookiecutter_app/templates/' #TODO: {{cookiecutter.project_slug}}/templates/
 
   - repo: https://github.com/asottile/pyupgrade
     rev: v3.15.2
