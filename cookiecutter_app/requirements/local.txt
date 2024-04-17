@@ -1,0 +1,4 @@
+-r production.txt
+
+# for development
+flask-debugtoolbar==0.14.1
