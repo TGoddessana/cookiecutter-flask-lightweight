@@ -1,46 +1,7 @@
-{% extends "layout.html" %} {% block content %} {# TODO: locate this styles.css
-#}
-<style>
-  .login-box {
-    width: 90%;
-    margin: 0 auto;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-
-  .login-box .title {
-    margin-bottom: 0.5em;
-  }
-
-  @media (min-width: 600px) {
-    .login-box {
-      width: 100%;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .login-box {
-      width: 80%;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .login-box {
-      width: 65%;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .login-box {
-      width: 50%;
-    }
-  }
-</style>
+{% extends "layout.html" %} {% block content %}
 
 <div class="login-box">
-  <h1 class="title">Login</h1>
+  <h1 class="title">Log In</h1>
   <form class="pure-form">
     <fieldset>
       <label for="stacked-username">Username</label>

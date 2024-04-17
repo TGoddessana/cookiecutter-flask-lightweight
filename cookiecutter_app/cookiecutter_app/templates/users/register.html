@@ -1,0 +1,41 @@
+{% extends "layout.html" %} {% block content %}
+
+<div class="login-box">
+    <h1 class="title">Sign Up</h1>
+    <form class="pure-form" method="POST">
+        <fieldset>
+            <label for="stacked-username">Username</label>
+            <input
+                    type="email"
+                    id="stacked-username"
+                    placeholder="Username"
+                    required
+                    name="username"
+            />
+
+            <label for="stacked-password1">Password</label>
+            <input
+                    type="password"
+                    id="stacked-password1"
+                    placeholder="Password"
+                    required
+                    name="password"
+            />
+
+            <label for="stacked-password2">Confirm Password</label>
+            <input
+                    type="password"
+                    id="stacked-password2"
+                    placeholder="Confirm Password"
+                    required
+                    name="confirm_password"
+            />
+
+            <button type="submit" class="pure-button pure-button-primary">
+                Register
+            </button>
+        </fieldset>
+    </form>
+</div>
+
+{% endblock %}
