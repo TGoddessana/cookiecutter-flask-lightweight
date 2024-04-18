@@ -1,0 +1,31 @@
+<!-- Message Flashing -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for message in messages %}
+            {% if message[0] == 'info' %}
+                <div x-data="{ open: true }" x-show="open" class="flash flash-info" role="alert">
+                    <span class="message">{{ message[1] }}</span>
+                    <button class="pure-button" x-on:click="open = false">x</button>
+                </div>
+            {% endif %}
+            {% if message[0] == 'success' %}
+                <div x-data="{ open: true }" x-show="open" class="flash flash-success" role="alert">
+                    <span class="message">{{ message[1] }}</span>
+                    <button class="pure-button" x-on:click="open = false">x</button>
+                </div>
+            {% endif %}
+            {% if message[0] == 'warning' %}
+                <div x-data="{ open: true }" x-show="open" class="flash flash-warning" role="alert">
+                    <span class="message">{{ message[1] }}</span>
+                    <button class="pure-button" x-on:click="open = false">x</button>
+                </div>
+            {% endif %}
+            {% if message[0] == 'error' %}
+                <div x-data="{ open: true }" x-show="open" class="flash flash-error" role="alert">
+                    <span class="message">{{ message[1] }}</span>
+                    <button class="pure-button" x-on:click="open = false">x</button>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
