@@ -1,6 +1,6 @@
 from flask import Flask
 
-from .extensions import cors, db, debug_toolbar, migrate
+from .extensions import cors, db, debug_toolbar, migrate, login_manager
 from .home.views import blueprint as home_blueprint
 from .users.views import blueprint as users_blueprint
 
@@ -21,14 +21,24 @@ def create_app(config_object):
 
 def _register_extensions(app):
     cors.init_app(app)
-    debug_toolbar.init_app(app)
     db.init_app(app)
     _import_models()
     migrate.init_app(app, db)
+    debug_toolbar.init_app(app)
+    login_manager.init_app(app)
+    _setup_login_manager()
 
 
 def _import_models():
-    from .users import models
+    from .users import models  # noqa: F401
+
+
+def _setup_login_manager():
+    @login_manager.user_loader
+    def load_user(user_id):
+        from .users.models import User
+
+        return User.query.get(user_id)
 
 
 def _register_blueprints(app):

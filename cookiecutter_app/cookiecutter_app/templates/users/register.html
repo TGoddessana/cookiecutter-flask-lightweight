@@ -1,36 +1,29 @@
 {% extends "layout.html" %} {% block content %}
 
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
 <div class="login-box">
     <h1 class="title">Sign Up</h1>
+    {% include "flash.html" %}
     <form class="pure-form" method="POST">
+        {{ form.csrf_token }}
         <fieldset>
-            <label for="stacked-username">Username</label>
-            <input
-                    type="email"
-                    id="stacked-username"
-                    placeholder="Username"
-                    required
-                    name="username"
-            />
-
-            <label for="stacked-password1">Password</label>
-            <input
-                    type="password"
-                    id="stacked-password1"
-                    placeholder="Password"
-                    required
-                    name="password"
-            />
-
-            <label for="stacked-password2">Confirm Password</label>
-            <input
-                    type="password"
-                    id="stacked-password2"
-                    placeholder="Confirm Password"
-                    required
-                    name="confirm_password"
-            />
-
+            <div>
+                {{ form.username.label() }}
+                {{ form.username() }}
+            </div>
+            <div>
+                {{ form.email.label() }}
+                {{ form.email() }}
+            </div>
+            <div>
+                {{ form.password1.label() }}
+                {{ form.password1() }}
+            </div>
+            <div>
+                {{ form.password2.label() }}
+                {{ form.password2() }}
+            </div>
             <button type="submit" class="pure-button pure-button-primary">
                 Register
             </button>
