@@ -6,8 +6,6 @@ see: https://purecss.io/layouts/marketing/
 */
 
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -17,13 +15,7 @@ body {
     font-size: 13px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-label {
+h1, h2, h3, h4, h5, h6, label {
     color: #34495e;
 }
 
@@ -59,9 +51,6 @@ label {
     margin-bottom: 1em;
 }
 
-/*
- * -- PURE BUTTON STYLES --
- */
 .pure-button {
     background-color: #1f8dd6;
     color: white;
@@ -76,27 +65,15 @@ a.pure-button-primary {
     font-size: 120%;
 }
 
-/*
- * -- MENU STYLES --
- */
-
 .home-menu {
     padding: 0.5em;
     text-align: center;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-}
-
-.home-menu {
     background: #2d3e50;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.pure-menu.pure-menu-fixed {
-    border-bottom: none;
-    z-index: 4;
 }
 
 .home-menu .pure-menu-heading {
@@ -105,12 +82,7 @@ a.pure-button-primary {
     font-size: 120%;
 }
 
-.home-menu .pure-menu-selected a {
-    color: white;
-}
-
-.home-menu li a:hover,
-.home-menu li a:focus {
+.home-menu li a:hover, .home-menu li a:focus {
     background: none;
     border: none;
     color: #aecfe5;
@@ -120,10 +92,6 @@ a.pure-button-primary {
     display: inline-block;
     text-align: right;
 }
-
-/*
- * -- SPLASH STYLES --
- */
 
 .splash-container {
     background: #1f8dd6;
@@ -154,7 +122,6 @@ a.pure-button-primary {
     color: white;
     border: 3px solid white;
     padding: 1em 1.6em;
-    font-weight: 100;
     border-radius: 5px;
     line-height: 1em;
 }
@@ -168,15 +135,10 @@ a.pure-button-primary {
 .splash-content-wrapper {
     position: absolute;
     top: 60%;
-    width: 100%;
+    max-width: 100%;
     min-height: 12%;
-    z-index: 2;
     background: white;
 }
-
-/*
- * -- CONTENT STYLES --
- */
 
 .content-wrapper {
     margin-top: 50px;
@@ -192,16 +154,8 @@ a.pure-button-primary {
     margin: 2em 0 1em;
 }
 
-.content-head-ribbon {
-    color: white;
-}
-
 .content-subhead {
     color: #1f8dd6;
-}
-
-.content-subhead i {
-    margin-right: 7px;
 }
 
 .ribbon {
@@ -216,7 +170,60 @@ a.pure-button-primary {
     width: 100%;
 }
 
-/* Users app styles */
+.flash {
+    padding: 15px;
+    margin: 0 auto 20px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.flash-error {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+}
+
+.flash-info {
+    background-color: #d9edf7;
+    color: #31708f;
+    border: 1px solid #bce8f1;
+}
+
+.flash-warning {
+    background-color: #fcf8e3;
+    color: #8a6d3b;
+    border: 1px solid #faebcc;
+}
+
+.flash-success {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+}
+
+.flash-error button, .flash-info button, .flash-warning button, .flash-success button {
+    float: right;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-size: 1.2em;
+    line-height: 1;
+    padding: 0;
+    cursor: pointer;
+}
+
+.login-box {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.login-box .title {
+    margin-bottom: 0.5em;
+}
 
 @media (min-width: 48em) {
     body {
@@ -225,10 +232,6 @@ a.pure-button-primary {
 
     .home-menu {
         text-align: left;
-    }
-
-    .home-menu ul {
-        float: right;
     }
 
     .splash {
@@ -245,24 +248,10 @@ a.pure-button-primary {
     }
 }
 
-
 @media (min-width: 78em) {
     .splash-head {
         font-size: 300%;
     }
-}
-
-.login-box {
-    width: 90%;
-    margin: 0 auto;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-.login-box .title {
-    margin-bottom: 0.5em;
 }
 
 @media (min-width: 600px) {
