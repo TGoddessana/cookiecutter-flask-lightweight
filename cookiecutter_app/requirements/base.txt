@@ -2,11 +2,13 @@
 environs == 11.0.0
 cryptography == 42.0.5
 email-validator == 2.1.1
+ruff == 0.3.7
 
 # Flask
 flask == 3.0.3
 flask-cors == 3.0.10
 flask-sqlalchemy == 3.1.1
+flask-wtf == 1.2.1
 flask-migrate == 4.0.7
 flask-login == 0.6.3
 flask-babel == 4.0.0
