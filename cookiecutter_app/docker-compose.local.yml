@@ -5,7 +5,7 @@ services:
     container_name: local_flask
     build:
       context: .
-      dockerfile: docker/flask/Dockerfile
+      dockerfile: docker/Dockerfile-flask
     ports:
       - '5000:5000'
     volumes:
@@ -26,11 +26,10 @@ services:
     container_name: local_mysql
     build:
       context: .
-      dockerfile: docker/mysql/Dockerfile
+      dockerfile: docker/Dockerfile-mysql
     ports:
       - '3306:3306'
     volumes:
-      - ./db_data:/var/lib/mysql
-      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./docker/db_data:/var/lib/mysql
     env_file:
       - .env
