@@ -1,9 +1,16 @@
 <div class="header">
     <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
         <a class="pure-menu-heading" href="{{ url_for("home.home") }}">cookiecutter_app</a>
+
         <div class="header-button">
+        {% if current_user.is_authenticated %}
+            <a class="pure-button" href="#">Welcome, {{ current_user.username }}</a>
+            <a class="pure-button" href="/logout">Log Out</a>
+        {% else %}
             <a class="pure-button" href="/login">Log In</a>
-            <a class="pure-button" href="/signup">Sign Up</a>
+            <a class="pure-button" href="/register">Register</a>
+        {% endif %}
         </div>
+
     </div>
 </div>

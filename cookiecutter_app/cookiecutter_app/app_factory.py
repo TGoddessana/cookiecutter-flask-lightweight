@@ -38,7 +38,8 @@ def _setup_login_manager():
     def load_user(user_id):
         from .users.models import User
 
-        return User.query.get(user_id)
+        user = User.query.get(user_id)
+        return user
 
 
 def _register_blueprints(app):
