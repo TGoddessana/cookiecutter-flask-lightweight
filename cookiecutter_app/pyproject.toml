@@ -1,0 +1,30 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore:::.*flask_debugtoolbar*"]
+
+
+[tool.ruff]
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".nox",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "build",
+    "dist",
+    "venv",
+    "*/migrations/*.py",
+]
+
+line-length = 88
+indent-width = 4
+target-version = "py312"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.ruff.lint.isort]
+force-single-line = true
