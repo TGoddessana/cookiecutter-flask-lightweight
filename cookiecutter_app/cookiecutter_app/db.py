@@ -3,22 +3,24 @@ from functools import wraps
 from .extensions import db
 
 
-def make_transactional(func):
-    """
-    Decorator that wraps a function in a transaction.
-    """
+class Transactional:
+    def __call__(self, func):
+        """
+        Decorator that wraps a function in a transaction.
+        if an exception is raised, the transaction will be rolled back.
+        """
 
-    @wraps(func)
-    def decorated_function(*args, **kwargs):
-        try:
-            result = func(*args, **kwargs)
-            db.session.commit()
+        @wraps(func)
+        def _transactional(*args, **kwargs):
+            try:
+                result = func(*args, **kwargs)
+                db.session.commit()
+            except Exception as e:
+                db.session.rollback()
+                raise e
             return result
-        except Exception as e:
-            db.session.rollback()
-            raise e
 
-    return decorated_function
+        return _transactional
 
 
 class ActiveRecordMixin:
@@ -45,6 +47,13 @@ class ActiveRecordMixin:
 
         pagination = query.paginate(page, per_page, error_out=False)
         return pagination
+
+    @classmethod
+    def get_by_id(cls, id):
+        """
+        we only provide a get method for the primary key.
+        """
+        return cls.query.get(id)
 
     @classmethod
     def update(cls, id, **kwargs):
