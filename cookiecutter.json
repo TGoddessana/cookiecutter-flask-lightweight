@@ -1,0 +1,20 @@
+{
+  "project_name": "My Flask Project",
+  "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
+  "description": "See, this is my Flask project.",
+  "author_name": "JAEGYUN JUNG",
+  "email": "{{ cookiecutter.author_name.lower() | trim() |replace(' ', '-') }}@{{ cookiecutter.domain_name.lower() | trim() }}",
+  "version": "0.1.0",
+  "open_source_license": [
+    "MIT",
+    "BSD",
+    "GPLv3",
+    "Apache Software License 2.0",
+    "Not open source"
+  ],
+  "timezone": "UTC",
+  "database": ["SQLite", "MySQL"],
+  "use_docker": "n",
+  "use_smorest": "n",
+  "ci_tool": ["None", "Github"]
+}
