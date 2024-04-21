@@ -2,7 +2,6 @@ from http import HTTPMethod
 
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_user, logout_user
-
 from cookiecutter_app.db import make_transactional
 from cookiecutter_app.users.forms import RegisterForm, LoginForm
 from cookiecutter_app.users.models import User
@@ -34,8 +33,8 @@ def logout():
     return redirect(url_for("home.home"))
 
 
-@make_transactional
 @blueprint.route("/register", methods=[HTTPMethod.GET, HTTPMethod.POST])
+@make_transactional
 def register():
     register_form = RegisterForm()
 

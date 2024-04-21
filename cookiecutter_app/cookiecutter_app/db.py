@@ -3,24 +3,23 @@ from functools import wraps
 from .extensions import db
 
 
-class Transactional:
-    def __call__(self, func):
-        """
-        Decorator that wraps a function in a transaction.
-        if an exception is raised, the transaction will be rolled back.
-        """
+def make_transactional(func):
+    """
+    Decorator that wraps a function in a transaction.
+    if an exception is raised, the transaction will be rolled back.
+    """
 
-        @wraps(func)
-        def _transactional(*args, **kwargs):
-            try:
-                result = func(*args, **kwargs)
-                db.session.commit()
-            except Exception as e:
-                db.session.rollback()
-                raise e
-            return result
+    @wraps(func)
+    def _transactional(*args, **kwargs):
+        try:
+            result = func(*args, **kwargs)
+            db.session.commit()
+        except Exception as e:
+            db.session.rollback()
+            raise e
+        return result
 
-        return _transactional
+    return _transactional
 
 
 class ActiveRecordMixin:
