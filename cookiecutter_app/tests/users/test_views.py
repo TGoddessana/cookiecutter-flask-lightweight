@@ -2,11 +2,7 @@ from flask import url_for, request
 from cookiecutter_app.users.models import User
 
 
-def test_login_success(client, db):
-    User.create(username="test", email="test@test.com", password="test123")
-    db.session.commit()
-    assert User.query.count() == 1
-
+def test_login_success(client, db, user):
     response = client.post(
         url_for("users.login"),
         data=dict(username="test", password="test123"),
@@ -17,11 +13,7 @@ def test_login_success(client, db):
     assert b"home" in response.data
 
 
-def test_login_fails(client, db):
-    User.create(username="test", email="test@test.com", password="test123")
-    db.session.commit()
-    assert User.query.count() == 1
-
+def test_login_fails(client, db, user):
     response = client.post(
         url_for("users.login"),
         data=dict(username="invalid", password="test123"),
@@ -32,7 +24,9 @@ def test_login_fails(client, db):
     assert b"home" in response.data
 
 
-def test_register(client, db):
+def test_register(client, db, user):
+    assert User.query.count() == 1
+
     client.post(
         url_for("users.register"),
         data=dict(
@@ -44,5 +38,6 @@ def test_register(client, db):
         follow_redirects=True,
     )
 
+    assert User.query.count() == 2
     assert User.query.filter_by(username="test2").first().username == "test2"
     assert request.path == url_for("home.home")
