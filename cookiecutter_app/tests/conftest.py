@@ -4,7 +4,7 @@ from cookiecutter_app.settings import TestingConfig
 from cookiecutter_app.app_factory import create_app
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def app():
     """Create application for the tests."""
     _app = create_app(TestingConfig)
@@ -14,7 +14,7 @@ def app():
     ctx.pop()
 
 
-@pytest.fixture
+@pytest.fixture(scope="function")
 def db(app):
     """Create database for the tests."""
     _db.app = app
@@ -27,7 +27,7 @@ def db(app):
     _db.drop_all()
 
 
-@pytest.fixture
+@pytest.fixture(scope="function")
 def client(app):
     """Create a test client for the tests."""
     return app.test_client()
