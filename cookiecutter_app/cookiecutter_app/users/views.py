@@ -5,6 +5,7 @@ from flask_login import login_user, logout_user
 from cookiecutter_app.db import make_transactional
 from cookiecutter_app.users.forms import RegisterForm, LoginForm
 from cookiecutter_app.users.models import User
+from cookiecutter_app.utils import flash_errors
 
 blueprint = Blueprint("users", __name__)
 
@@ -13,18 +14,15 @@ blueprint = Blueprint("users", __name__)
 def login():
     login_form = LoginForm()
 
-    if request.method == "POST":
-        if login_form.validate_on_submit():
-            user = User.query.filter_by(username=login_form.username.data).first()
-            if user and user.check_password(login_form.password.data):
-                login_user(user)
-                return redirect(url_for("home.home"))
-            else:
-                flash("Invalid username or password", "error")
-        else:
-            flash("Form is not valid", "error")
+    if login_form.validate_on_submit():
+        user = User.get_by_username(login_form.username.data)
+        login_user(user)
+        next_url = request.args.get('next')
+        return redirect(next_url or url_for('home.home'))
+    else:
+        flash_errors(login_form, "error")
 
-    return render_template("users/login.html", form=login_form)
+    return render_template('users/login.html', form=login_form)
 
 
 @blueprint.route("/logout")
@@ -47,8 +45,6 @@ def register():
         flash(f"User {user.username} created", "success")
         return redirect(url_for("home.home"))
     else:
-        for field, field_errors in register_form.errors.items():
-            for error in field_errors:
-                flash(f"{field}: {error}", "error")
+        flash_errors(register_form, "error")
 
     return render_template("users/register.html", form=register_form)
