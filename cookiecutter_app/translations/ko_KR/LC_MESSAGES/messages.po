@@ -1,0 +1,52 @@
+# Korean (South Korea) translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-04-22 23:25+0900\n"
+"PO-Revision-Date: 2024-04-22 23:29+0900\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ko_KR\n"
+"Language-Team: ko_KR <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.14.0\n"
+
+#: cookiecutter_app/users/forms.py:12 cookiecutter_app/users/forms.py:35
+msgid "Enter your username"
+msgstr "유저네임을 입력하세요"
+
+#: cookiecutter_app/users/forms.py:17 cookiecutter_app/users/forms.py:45
+msgid "Enter your password"
+msgstr "비밀번호를 입력하세요"
+
+#: cookiecutter_app/users/forms.py:26
+msgid "Invalid username or password"
+msgstr "유효하지 않은 유저네임 또는 비밀번호입니다"
+
+#: cookiecutter_app/users/forms.py:40
+msgid "Enter your email"
+msgstr "이메일을 입력하세요"
+
+#: cookiecutter_app/users/forms.py:50
+msgid "Re-enter your password"
+msgstr "비밀번호를 다시 입력하세요"
+
+#: cookiecutter_app/users/forms.py:53
+msgid "Passwords must match"
+msgstr "비밀번호가 일치해야 합니다"
+
+#: cookiecutter_app/users/forms.py:59
+msgid "Username already in use."
+msgstr "이미 사용중인 유저네임입니다"
+
+#: cookiecutter_app/users/forms.py:63
+msgid "Email already in use."
+msgstr "이미 사용중인 이메일입니다"
+

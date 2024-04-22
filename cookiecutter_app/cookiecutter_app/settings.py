@@ -31,6 +31,16 @@ class BaseConfig(Config):
     # Flask-Admin
     FLASK_ADMIN_SWATCH = "flatly"
 
+    # Flask-Babel
+    BABEL_DEFAULT_LOCALE = "en"
+    BABEL_DEFAULT_TIMEZONE = "UTC"
+    BABEL_TRANSLATION_DIRECTORIES = "../translations"
+    LANGUAGES = {
+        "en": "English",
+        "ko": "Korean",
+        # Add more languages here...
+    }
+
 
 class ProductionConfig(BaseConfig):
     ENV = Environment.production
