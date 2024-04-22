@@ -1,0 +1,55 @@
+{% extends 'admin/admin_base.html' %}
+
+{% block body %}
+
+<h3 class="m-4">COOKIECUTTER_APP Dashboard</h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card m-2" style="width: 90%;">
+                <div class="card-body">
+                    <h5 class="card-title">Feel free to fill whatever you want here</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">For example,</h6>
+                    <p class="card-text">For example, you can display your application's model information here.</p>
+                    <a href="#" class="card-link">Card link</a>
+                </div>
+            </div>
+            <div class="card m-2" style="width: 90%;">
+                <div class="card-body">
+                    <h5 class="card-title">Feel free to fill whatever you want here</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">For example,</h6>
+                    <p class="card-text">
+                        Or, you can pull in the news you want to see, tailored to your business.
+                        "The price of Bitcoin recently surpassed $100 million." Like this!
+                    </p>
+                    <a href="#" class="card-link">Card link</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col w-50">
+            <h4>Current Flask Config</h4>
+            <div class="table-responsive">
+                <table id="configTable" class="table table-striped">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>Key</th>
+                        <th>Value</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for key, value in config_values.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

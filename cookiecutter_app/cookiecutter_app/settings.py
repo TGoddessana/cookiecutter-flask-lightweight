@@ -28,6 +28,9 @@ class BaseConfig(Config):
     SQLALCHEMY_DATABASE_URI = env.str("DATABASE_URL")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+    # Flask-Admin
+    FLASK_ADMIN_SWATCH = "flatly"
+
 
 class ProductionConfig(BaseConfig):
     ENV = Environment.production

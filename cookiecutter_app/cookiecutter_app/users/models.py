@@ -40,6 +40,10 @@ class User(Model, UserMixin, TimeStampedMixin):
         db.session.add(instance)
         return instance
 
+    @classmethod
+    def get_by_username(cls, username):
+        return cls.query.filter_by(username=username).first()
+
     def _set_password(self, password):
         self.password = generate_password_hash(password)
 

@@ -1,0 +1,6 @@
+{% extends 'admin/master.html' %}
+
+{% block access_control %}
+<span type="button" class="btn btn-info">Logged as {{ current_user.username }}</span>
+<a class="btn btn-light m-1" href="{{ url_for('users.logout') }}">Logout</a>
+{% endblock %}

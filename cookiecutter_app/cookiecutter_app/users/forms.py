@@ -17,6 +17,16 @@ class LoginForm(FlaskForm):
         validators=[DataRequired(), Length(min=4, max=80)],
     )
 
+    def validate(self, extra_validators=None):
+        super().validate(extra_validators)
+        user = User.get_by_username(self.username.data)
+
+        if user is None or not user.check_password(self.password.data):
+            self.form_errors.append("Invalid username or password")
+            return False
+
+        return True
+
 
 class RegisterForm(FlaskForm):
     username = StringField(
