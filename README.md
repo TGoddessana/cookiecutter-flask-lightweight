@@ -18,10 +18,14 @@ this is a lightweight template! 😎'
 - [ ] Basic Flask app structure
 - [x] 12-factor app ready using [`environs`](https://github.com/sloria/environs)
 - [x] CORS Header support using [`flask-cors`](https://github.com/corydolphin/flask-cors)
-- [ ] ORM setup using [`flask-sqlalchemy`](https://github.com/pallets-eco/flask-sqlalchemy)
-- [ ] Database migration using [`flask-migrate`](https://github.com/miguelgrinberg/Flask-Migrate)
+- [x] ORM setup using [`flask-sqlalchemy`](https://github.com/pallets-eco/flask-sqlalchemy)
+- [x] Database migration using [`flask-migrate`](https://github.com/miguelgrinberg/Flask-Migrate)
 - [x] Debug toolbar setup using [`flask-debugtoolbar`](https://github.com/pallets-eco/flask-debugtoolbar)
+- [x] Form handling using [`flask-wtf`](https://github.com/wtforms/flask-wtf)
+- [x] Admin interface using [`flask-admin`](https://github.com/flask-admin/flask-admin)
+- [x] Authentication using [`flask-login`](https://github.com/maxcountryman/flask-login)
 - [ ] API Development using [`flask-smorest`](https://github.com/marshmallow-code/flask-smorest)
+- [x] I18n support using [`Flask-Babel`](https://github.com/python-babel/flask-babel)
 - [ ] Containerized using `Docker`
 - [ ] Code quality using `pre-commit`
 
